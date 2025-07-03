@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de POO</title>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Programación Orientada a Objetos</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Caracteristicas.html">Características</a>
+      <a href="lenguajes.html">Lenguajes</a>
+      <a href="Ejemplos.html">Ejemplos</a>
+      <a href="formulario poo.html">Formulario</a>
+    </nav>
+  </header>
+
+<h2>Formulario de POO</h2>
+
+<form action="php.php" method="POST" id="formularioCompleto">
+  <label>Nombre: <input type="text" id="nombre" required></label><br><br>
+
+  <label>Tema favorito:
+    <select id="tema" required>
+      <option value="">-- Selecciona un tema --</option>
+      <option value="Historia.html">Historia</option>
+      <option value="caracteristicas.html">Características</option>
+      <option value="lenguajes.html">Lenguajes</option>
+      <option value="ejemplos.html">Ejemplos</option>
+    </select>
+  </label><br><br>
+
+  <label>Lenguaje: <input type="text" id="lenguaje" required></label><br><br>
+
+  <label>Tu opinión:<br>
+    <textarea id="opinion" rows="3" required></textarea>
+  </label><br><br>
+
+  <div style="text-align: center;">
+    <button type="submit">Enviar</button>
+  </div>
+</form>
+
+<script>
+  const formulario = document.getElementById("formularioCompleto");
+
+  formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (formulario.checkValidity()) {
+      alert("✅ El formulario de POO ha sido creado con éxito. ¡GRACIAS!");
+      formulario.reset();
+    } else {
+      formulario.reportValidity();
+    }
+  });
+</script>
+
+</body>
+</html>
